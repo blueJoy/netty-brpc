@@ -1,6 +1,6 @@
 package com.bxz.brpc.server;
 
-import com.bxz.brpc.handler.RpcHandler;
+import com.bxz.brpc.handler.RpcServerHandler;
 import com.bxz.brpc.protocol.RpcDecoder;
 import com.bxz.brpc.protocol.RpcEncoder;
 import com.bxz.brpc.protocol.RpcRequest;
@@ -67,7 +67,7 @@ public class RpcServer implements ApplicationContextAware,InitializingBean{
                                     .addLast(new LengthFieldBasedFrameDecoder(65536,0,4,0,0))
                                     .addLast(new RpcDecoder(RpcRequest.class))
                                     .addLast(new RpcEncoder(RpcResponse.class))
-                                    .addLast(new RpcHandler(beanRegistryMap));
+                                    .addLast(new RpcServerHandler(beanRegistryMap));
 
                         }
                     });

@@ -27,6 +27,6 @@ public class RpcRequest {
     /**
      * 方法参数
      **/
-    private Object[] paramters;
+    private Object[] parameters;
 
 }
